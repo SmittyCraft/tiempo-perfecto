@@ -66,6 +66,7 @@ function newEvent (element) {
 
 function collectValues (nameOfClass) {
   var bucket = [];
+  var i;
   for (i = 0; i < document.getElementsByClassName(nameOfClass).length; i++) {
     bucket.push(document.getElementsByClassName(nameOfClass)[i].value);
   }
@@ -74,9 +75,14 @@ function collectValues (nameOfClass) {
 
 $('.create').click(function () {
   var i;
+  var result = [];
+  var startHour = 0, endHour = 0, startMinute = 0, endMinute = 0;
   var eventNames = collectValues('eventName');
   var startTimes = collectValues('startTime');
   var endTimes = collectValues('endTime');
+  for (i = 0; i < eventNames.length; i++) {
+    
+  }
 });
   </script>
 </body>
