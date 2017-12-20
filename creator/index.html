@@ -92,6 +92,9 @@ $('.create').click(function () {
     build[i].endMinute = parseInt(endTimes[i].substring(3, 5), 10);
     build[i].name = eventNames[i];
   }
+  result = JSON.stringify(build);
+  $('#result').text(result);
+  $('#fin').show();
 });
   </script>
 </body>
