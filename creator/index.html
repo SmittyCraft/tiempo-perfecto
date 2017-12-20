@@ -86,8 +86,11 @@ $('.create').click(function () {
     build.push({});
     build[i].start = startTimes[i];
     build[i].end = endTimes[i];
-    build[i].startHour = startTimes[i].substring(0, 2);
-    build[i].startMinute = startTimes[i].substring(3, 5);
+    build[i].startHour = parseInt(startTimes[i].substring(0, 2), 10);
+    build[i].startMinute = parseInt(startTimes[i].substring(3, 5), 10);
+    build[i].endHour = parseInt(endTimes[i].substring(0, 2), 10);
+    build[i].endMinute = parseInt(endTimes[i].substring(3, 5), 10);
+    build[i].name = eventNames[i];
   }
 });
   </script>
