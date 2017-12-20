@@ -10,7 +10,7 @@
   <div id="header" class="w3-container">
     <p class="w3-xlarge">Create Schedule</p>
   </div>
-  <div id="pre" class="w3-container">
+  <div id="pre" class="w3-container" hidden>
     <p class="w3-large">To begin, select a type of schedule</p>
     <div class="w3-row">
       <div class="w3-col l4 m12 w3-button w3-grey option" id="static">
@@ -27,8 +27,26 @@
       </div>
     </div>
   </div>
-  <div class="w3-container" id="staticBuilder" hidden>
-    
+  <div class="w3-container scheduleBuilder" id="staticBuilder">
+    <p class="w3-large">You have selected a static schedule that is the same every day.</p>
+    <button class="backToPre w3-button w3-red">Back to Schedule Type Selection</button>
+    <hr/>
+    <div id="staticEvents">
+      <input type="text" class="eventName" placeholder="Event Name"/>
+      <br/><br/>
+      Start Time: <input type="time" class="startTime"/>
+      <br/><br/>
+      End Time: <input type="time" class="endTime"/>
+      <br/><br/>
+    </div>
+    <button class="w3-green w3-button" onclick="newEvent(document.getElementById('staticEvents'))">Add Event</button>
+    <br/><br/>
+    <button class="w3-green w3-button">Create Schedule</button>
+    <br/><br/>
+  </div>
+  <div id="fin" hidden>
+    <p>Your schedule:</p>
+    <p id="result"></p>
   </div>
   <script>
 $('.option').click(function () {
@@ -38,6 +56,21 @@ $('.option').click(function () {
     $('#staticBuilder').show();
   }
 });
+
+$('.backToPre').click(function () {
+  var userCheck = confirm('Are you sure you want to go back to schedule type selection?\nYour progress on your current schedule will be lost.');
+  if (userCheck) {
+    $('.scheduleBuilder').hide();
+    $('#staticEvents').empty();
+    $('#pre').show();
+  }
+});
+
+function newEvent (element) {
+  var target = $(element);
+  var input = '<hr/><input type="text" class="eventName" placeholder="Event Name"/><br/><br/>Start Time: <input type="time" class="startTime"/><br/><br/>End Time: <input type="time" class="endTime"/><br/><br/>';
+  target.append(input);
+}
   </script>
 </body>
 </html>
