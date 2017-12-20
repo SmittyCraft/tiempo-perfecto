@@ -27,11 +27,15 @@
       </div>
     </div>
   </div>
+  <div class="w3-container" id="staticBuilder" hidden>
+    
+  </div>
   <script>
 $('.option').click(function () {
   var selection = $(this).attr('id');
   if (selection === 'static') {
-    
+    $('#pre').hide();
+    $('#staticBuilder').show();
   }
 });
   </script>
