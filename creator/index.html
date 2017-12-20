@@ -77,11 +77,17 @@ $('.create').click(function () {
   var i;
   var result = [];
   var startHour = 0, endHour = 0, startMinute = 0, endMinute = 0;
+  var build = [];
   var eventNames = collectValues('eventName');
   var startTimes = collectValues('startTime');
   var endTimes = collectValues('endTime');
   for (i = 0; i < eventNames.length; i++) {
-    
+    build = [];
+    build.push({});
+    build[i].start = startTimes[i];
+    build[i].end = endTimes[i];
+    build[i].startHour = startTimes[i].substring(0, 2);
+    build[i].startMinute = startTimes[i].substring(3, 5);
   }
 });
   </script>
