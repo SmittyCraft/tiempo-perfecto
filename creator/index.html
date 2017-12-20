@@ -10,24 +10,24 @@
   <div id="header" class="w3-container">
     <p class="w3-xlarge">Create Schedule</p>
   </div>
-  <div id="pre" class="w3-container" hidden>
+  <div id="pre" class="w3-container">
     <p class="w3-large">To begin, select a type of schedule</p>
     <div class="w3-row">
-      <div class="w3-col l4 m12 w3-button w3-grey option" id="static">
+      <div class="w3-col l4 m12 w3-button w3-green option" id="static">
         <p class="w3-large">Static Schedule</p> 
         <p>The same thing every day;<br/>No variation from Monday to Sunday</p>
       </div>
-      <div class="w3-col l4 m12 w3-button w3-grey option" id="oddEven">
-        <p class="w3-large">Somewhat Variant Schedule</p>
+      <div class="w3-col l4 m12 w3-button w3-grey" id="oddEven">
+        <p class="w3-large">Somewhat Variant Schedule (coming soon)</p>
         <p>Odd days are different than even days</p>
       </div>
-      <div class="w3-col l4 m12 w3-button w3-grey option" id="staticWeekday">
+      <div class="w3-col l4 m12 w3-button w3-grey" id="staticWeekday">
         <p class="w3-large">Static Weekday Schedule</p>
         <p>Nothing on the weekends;<br/>All weekdays are the same</p>
       </div>
     </div>
   </div>
-  <div class="w3-container scheduleBuilder" id="staticBuilder">
+  <div class="w3-container scheduleBuilder" id="staticBuilder" hidden>
     <p class="w3-large">You have selected a static schedule that is the same every day.</p>
     <button class="backToPre w3-button w3-red">Back to Schedule Type Selection</button>
     <div id="staticEvents"></div>
