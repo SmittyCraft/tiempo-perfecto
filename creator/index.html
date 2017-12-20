@@ -30,18 +30,10 @@
   <div class="w3-container scheduleBuilder" id="staticBuilder">
     <p class="w3-large">You have selected a static schedule that is the same every day.</p>
     <button class="backToPre w3-button w3-red">Back to Schedule Type Selection</button>
-    <hr/>
-    <div id="staticEvents">
-      <input type="text" class="eventName" placeholder="Event Name"/>
-      <br/><br/>
-      Start Time: <input type="time" class="startTime"/>
-      <br/><br/>
-      End Time: <input type="time" class="endTime"/>
-      <br/><br/>
-    </div>
+    <div id="staticEvents"></div>
     <button class="w3-green w3-button" onclick="newEvent(document.getElementById('staticEvents'))">Add Event</button>
     <br/><br/>
-    <button class="w3-green w3-button">Create Schedule</button>
+    <button class="w3-green w3-button create">Create Schedule</button>
     <br/><br/>
   </div>
   <div id="fin" hidden>
@@ -71,6 +63,21 @@ function newEvent (element) {
   var input = '<hr/><input type="text" class="eventName" placeholder="Event Name"/><br/><br/>Start Time: <input type="time" class="startTime"/><br/><br/>End Time: <input type="time" class="endTime"/><br/><br/>';
   target.append(input);
 }
+
+function collectValues (nameOfClass) {
+  var bucket = [];
+  for (i = 0; i < document.getElementsByClassName(nameOfClass).length; i++) {
+    bucket.push(document.getElementsByClassName(nameOfClass)[i].value);
+  }
+  return bucket;
+}
+
+$('.create').click(function () {
+  var i;
+  var eventNames = collectValues('eventName');
+  var startTimes = collectValues('startTime');
+  var endTimes = collectValues('endTimes');
+});
   </script>
 </body>
 </html>
