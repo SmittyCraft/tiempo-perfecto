@@ -3,6 +3,9 @@ $('.option').click(function () {
   if (selection === 'static') {
     $('#pre').hide();
     $('#staticBuilder').show();
+  } else if (selection === 'oddEven') {
+    $('#pre').hide();
+    $('#oddEvenBuilder').show();
   }
 });
 
@@ -31,10 +34,12 @@ function collectValues (nameOfClass) {
 }
 
 $('.create').click(function () {
+  // Development glitch; this is actually only to create a static schedule
   var i;
   var result = [];
   var startHour = 0, endHour = 0, startMinute = 0, endMinute = 0;
   var build = [];
+  var phaseOne = [];
   var eventNames = collectValues('eventName');
   var startTimes = collectValues('startTime');
   var endTimes = collectValues('endTime');
@@ -49,7 +54,14 @@ $('.create').click(function () {
     build[i].endMinute = parseInt(endTimes[i].substring(3, 5), 10);
     build[i].name = eventNames[i];
   }
+  for (i = 0; i < 7; i++) {
+    phaseOne.push(build);
+  }
   result = JSON.stringify(build);
   $('#result').text(result);
   $('#fin').show();
+});
+
+$('#createOddEven').click(function () {
+  
 });
