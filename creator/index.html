@@ -38,19 +38,23 @@
     <button class="w3-green w3-button create">Create Schedule</button>
     <br/><br/>
   </div>
-  <div class="w3-container scheduleBuilder" id="oddEvenBuilder">
+  <div class="w3-container scheduleBuilder w3-center" id="oddEvenBuilder">
     <p class="w3-large">You have selected an odd even schedule that is different depending on the calendar day.</p>
     <button class="backToPre w3-button w3-red">Back to Schedule Selection</button>
+    <br/><br/>
     <div class="w3-row w3-center">
       <div class="w3-col l6 m12">
         <div id="oddEvents"></div>
-        <button class="w3-green w3-button" onclick="newEvent(document.getElementById('oddEvents'))">Add Odd Event</button>
+        <button class="w3-green w3-button" onclick="newOddEvent()">Add Odd Event</button>
       </div>
+      <br/><br/>
       <div class="w3-col l6 m12">
         <div id="evenEvents"></div>
-        <button class="w3-green w3-button" onclick="newEvent(document.getElementById('evenEvents'))">Add Even Event</button>
+        <button class="w3-green w3-button" onclick="newEvenEvent()">Add Even Event</button>
       </div>
     </div>
+    <br/>
+    <button class="w3-green w3-button" id="createOddEven">Create Schedule</button>
   </div>
   <!-- Roster Display Section -->
   <div id="fin" hidden>
