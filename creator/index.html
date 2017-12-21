@@ -10,7 +10,7 @@
   <div id="header" class="w3-container">
     <p class="w3-xlarge">Create Schedule</p>
   </div>
-  <div id="pre" class="w3-container" hidden>
+  <div id="pre" class="w3-container">
     <p class="w3-large">To begin, select a type of schedule</p>
     <div class="w3-row">
       <div class="w3-col l4 m12 w3-button w3-green option jar" id="static">
@@ -36,18 +36,9 @@
     <button class="w3-green w3-button create">Create Schedule</button>
     <br/><br/>
   </div>
-  <div class="w3-container scheduleBuilder" id="staticBuilder">
-    <p class="w3-large">You have selected an every other day schedule that is one way on odd days and another way on even days.</p>
-    <button class="backToPre w3-button w3-red">Back to Schedule Type Selection</button>
-    <div id="oddEvents"></div>
-    <button class="w3-green w3-button" onclick="newEvent(document.getElementById('oddEvents'))">Add Event to Odd Day Schedule</button>
-    <br/><br/>
-    <button class="w3-green w3-button" id="createOddEven">Create Schedule</button>
-    <br/><br/>
-  </div>
   <div id="fin" hidden>
-    <p>Your schedule:</p>
-    <p id="result"></p>
+    <p>Your schedule is saved in the following string. It is recommended you save it to a document such as a Google Document for easy access later.</p>
+    <p id=result></p>
   </div>
   <script src="creator.min.js"></script>
 </body>
