@@ -3,9 +3,6 @@ $('.option').click(function () {
   if (selection === 'static') {
     $('#pre').hide();
     $('#staticBuilder').show();
-  } else if (selection === 'oddEven') {
-    $('#pre').hide();
-    $('#oddEvenBuilder').show();
   }
 });
 
@@ -34,34 +31,31 @@ function collectValues (nameOfClass) {
 }
 
 $('.create').click(function () {
-  // Development glitch; this is actually only to create a static schedule
+  // Spoiler Alert: this is actually only to create a static schedule
   var i;
-  var result = [];
-  var startHour = 0, endHour = 0, startMinute = 0, endMinute = 0;
-  var build = [];
-  var phaseOne = [];
   var eventNames = collectValues('eventName');
   var startTimes = collectValues('startTime');
   var endTimes = collectValues('endTime');
+  var schedule = {};
+  var build = {};
+  var result = '';
+  schedule.type = 'static';
+  schedule.times = [];
   for (i = 0; i < eventNames.length; i++) {
-    build = [];
-    build.push({});
-    build[i].start = startTimes[i];
-    build[i].end = endTimes[i];
-    build[i].startHour = parseInt(startTimes[i].substring(0, 2), 10);
-    build[i].startMinute = parseInt(startTimes[i].substring(3, 5), 10);
-    build[i].endHour = parseInt(endTimes[i].substring(0, 2), 10);
-    build[i].endMinute = parseInt(endTimes[i].substring(3, 5), 10);
-    build[i].name = eventNames[i];
+    // Empty build object
+    build = {};
+    // Assign values to various attributes
+    build.name = eventNames[i];
+    build.start = startTimes[i];
+    build.startHour = parseInt(startTimes[i].substr(0, 2), 10);
+    build.startMinute = parseInt(startTimes[i].substring(3, 5), 10);
+    build.end = endTimes[i];
+    build.endHour = parseInt(endTimes[i].substr(0, 2), 10);
+    build.endMinute = parseInt(endTimes[i].substring(3, 5), 10);
+    // Push build object to schedule times
+    schedule.times.push(build);
   }
-  for (i = 0; i < 7; i++) {
-    phaseOne.push(build);
-  }
-  result = JSON.stringify(build);
+  result = JSON.stringify(schedule);
   $('#result').text(result);
   $('#fin').show();
-});
-
-$('#createOddEven').click(function () {
-  
 });
