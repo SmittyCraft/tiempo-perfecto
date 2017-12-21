@@ -24,11 +24,13 @@ function newEvent (element) {
 function newOddEvent () {
   var target = $('#oddEvents');
   var input = '<hr/><input type="text" class="oddEventName" placeholder="Event Name"/><br/><br/>Start Time: <input type="time" class="oddStartTime"/><br/><br/>End Time: <input type="time" class="oddEndTime"/><br/><br/>';
+  target.append(input);
 }
 
-function newEventEvent () {
+function newEvenEvent () {
   var target = $('#evenEvents');
   var input = '<hr/><input type="text" class="evenEventName" placeholder="Event Name"/><br/><br/>Start Time: <input type="time" class="evenStartTime"/><br/><br/>End Time: <input type="time" class="evenEndTime"/><br/><br/>';  
+  target.append(input);
 }
 
 function collectValues (nameOfClass) {
