@@ -3,9 +3,6 @@ $('.option').click(function () {
   if (selection === 'static') {
     $('#pre').hide();
     $('#staticBuilder').show();
-  } else if (selection === 'oddEven') {
-    $('#pre').hide();
-    $('#oddEvenBuilder').show();
   }
 });
 
