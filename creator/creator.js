@@ -41,6 +41,14 @@ function collectValues (nameOfClass) {
   }
   return bucket;
 }
+$('#createOddEven').click(function () {
+  var oddEventNames = collectValues('oddEventName');
+  var oddStartTimes = collectValues('oddStartTime');
+  var oddEndTimes = collectValues('oddEndTime');
+  var evenEventNames = collectValues('evenEventName');
+  var evenStartTimes = collectValues('evenStartTime');
+  var evenEndTimes = collectValues('evenEndTime');
+});
 
 $('.create').click(function () {
   // Spoiler Alert: this is actually only to create a static schedule
