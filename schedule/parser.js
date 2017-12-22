@@ -5,7 +5,6 @@ $('#load').click(function () {
     loadTable(schedule.times);
   } else if (schedule.type === 'oddEven') {
     var day = new Date().getDay() % 2;
-    var scheduleToday = schedule.times[day];
     loadTable(schedule.times[day]);
   }
 });
