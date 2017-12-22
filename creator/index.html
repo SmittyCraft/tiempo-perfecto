@@ -10,6 +10,7 @@
   <div id="header" class="w3-container">
     <p class="w3-xlarge">Create Schedule</p>
   </div>
+  <!-- Select Roster Section -->
   <div id="pre" class="w3-container">
     <p class="w3-large">To begin, select a type of schedule</p>
     <div class="w3-row">
@@ -17,7 +18,7 @@
         <p class="w3-large">Static Schedule</p> 
         <p>The same thing every day;<br/>No variation from Monday to Sunday</p>
       </div>
-      <div class="w3-col l4 m12 w3-button w3-grey disabled jar" id="oddEven">
+      <div class="w3-col l4 m12 w3-button w3-green option jar" id="oddEven">
         <p class="w3-large">Every Other Day Schedule (coming soon)</p>
         <p>Odd days are different than even days</p>
       </div>
@@ -27,6 +28,7 @@
       </div>
     </div>
   </div>
+  <!-- Roster Building Section -->
   <div class="w3-container scheduleBuilder" id="staticBuilder" hidden>
     <p class="w3-large">You have selected a static schedule that is the same every day.</p>
     <button class="backToPre w3-button w3-red">Back to Schedule Type Selection</button>
@@ -36,9 +38,29 @@
     <button class="w3-green w3-button create">Create Schedule</button>
     <br/><br/>
   </div>
+  <div class="w3-container scheduleBuilder w3-center" id="oddEvenBuilder" hidden>
+    <p class="w3-large">You have selected an odd even schedule that is different depending on the calendar day.</p>
+    <button class="backToPre w3-button w3-red">Back to Schedule Selection</button>
+    <br/><br/>
+    <div class="w3-row w3-center">
+      <div class="w3-col l6 m12">
+        <div id="oddEvents"></div>
+        <button class="w3-green w3-button" onclick="newOddEvent()">Add Odd Event</button>
+        <br/><br/>
+      </div>
+      <div class="w3-col l6 m12">
+        <div id="evenEvents"></div>
+        <button class="w3-green w3-button" onclick="newEvenEvent()">Add Even Event</button>
+      </div>
+    </div>
+    <br/>
+    <button class="w3-green w3-button" id="createOddEven">Create Schedule</button>
+    <br/><br/>
+  </div>
+  <!-- Roster Display Section -->
   <div id="fin" hidden>
-    <p>Your schedule:</p>
-    <p id="result"></p>
+    <p>Your schedule is saved in the following string. It is recommended you save it to a document such as a Google Document for easy access later.</p>
+    <p id=result></p>
   </div>
   <script src="creator.min.js"></script>
 </body>
