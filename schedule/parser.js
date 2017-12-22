@@ -17,11 +17,11 @@ $('#load').click(function () {
 function parseHour (hora) {
   var hour = parseInt(hora.substr(0, 2), 10);
   if (hour > 12) {
-    return hour - 12 + ' PM';
+    return String(hour - 12 + hora.substr(2, 5) + ' PM');
   } else if (hour === 0) {
     return '12 AM';
   } else {
-    return hour + ' AM';
+    return String(hour + hora.substr(2, 5) + ' AM');
   }
 }
 
