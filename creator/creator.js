@@ -3,6 +3,9 @@ $('.option').click(function () {
   if (selection === 'static') {
     $('#pre').hide();
     $('#staticBuilder').show();
+  } else if (selection === 'oddEven') {
+    $('#pre').hide();
+    $('#oddEvenBuilder').show();
   }
 });
 
@@ -48,6 +51,41 @@ $('#createOddEven').click(function () {
   var evenEventNames = collectValues('evenEventName');
   var evenStartTimes = collectValues('evenStartTime');
   var evenEndTimes = collectValues('evenEndTime');
+  var i;
+  var schedule = {};
+  var build = [];
+  var event = {};
+  var result = '';
+  schedule.type = 'oddEven';
+  schedule.times = [];
+  for (i = 0; i < evenEventNames.length; i++) {
+    event = {};
+    event.name = evenEventNames[i];
+    event.start = evenStartTimes[i];
+    event.startHour = parseInt(evenStartTimes[i].substr(0, 2), 10);
+    event.startMinute = parseInt(evenStartTimes[i].substr(3, 5), 10);
+    event.end = evenEndTimes[i];
+    event.endHour = parseInt(evenEndTimes[i].substr(0, 2), 10);
+    event.endMinute = parseInt(evenEndTimes[i].substr(3, 5), 10);
+    build.push(event);
+  }
+  schedule.times.push(build);
+  build = [];
+  for (i = 0; i < oddEventNames.length; i++) {
+    event = {};
+    event.name = oddEventNames[i];
+    event.start = oddStartTimes[i];
+    event.startHour = parseInt(oddStartTimes[i].substr(0, 2), 10);
+    event.startMinute = parseInt(oddStartTimes[i].substr(3, 5), 10);
+    event.end = oddEndTimes[i];
+    event.endHour = parseInt(oddEndTimes[i].substr(0, 2), 10);
+    event.endMinute = parseInt(oddEndTimes[i].substr(3, 5), 10);
+    build.push(event);
+  }
+  schedule.times.push(build);
+  result = JSON.stringify(schedule);
+  $('#result').text(result);
+  $('#fin').show();
 });
 
 $('.create').click(function () {
