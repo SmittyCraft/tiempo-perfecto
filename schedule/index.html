@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schedule Maker</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  <style>.full{height: 100%;}</style>
+</head>
+<body>
+  <div class="w3-container w3-blue full" id="pre" hidden>
+    <p class="w3-xlarge">Welcome to the schedule viewer</p>
+    <p class="w3-large">To begin, input your schedule here:</p>
+    <input type="text" class="w3-input" id="data" placeholder="Formatted Schedule"/>
+    <br/>
+    <button class="w3-button w3-white" id="load">Load Schedule</button>
+    <p>Don’t have a schedule? Get one <a href="../creator/" target="_blank">here</a>.</p>
+  </div>
+  <div id="main" hidden>
+    <table class="w3-table w3-hoverable w3-striped">
+      <thead><tr><th>Event Name</th><th>Start Time</th><th>End Time</th></tr></thead>
+      <tbody id="display"></tbody>
+    </table>
+  </div>
+  <script src="parser.min.js"></script>
+</body>
+</html>
