@@ -13,5 +13,15 @@ $('#load').click(function () {
     })();
     $('#pre').hide();
     $('#main').show();
+  } else if (schedule.type === 'oddEven') {
+    (function () {
+      var display = '';
+      var i;
+      var day = new Date().getDay() % 2;
+      var scheduleToday = schedule.times[day];
+      for (i = 0; i < scheduleToday.length; i++) {
+        display += '<tr><td>' + scheduleToday[i].name + '</td><td>' + scheduleToday[i].start + '</td><td>' + scheduleToday[i].end + '</td>';
+      }
+    })();
   }
 });
