@@ -11,14 +11,14 @@
     <p class="w3-xlarge">Create Schedule</p>
   </div>
   <!-- Select Roster Section -->
-  <div id="pre" class="w3-container" hidden>
+  <div id="pre" class="w3-container">
     <p class="w3-large">To begin, select a type of schedule</p>
     <div class="w3-row">
       <div class="w3-col l4 m12 w3-button w3-green option jar" id="static">
         <p class="w3-large">Static Schedule</p> 
         <p>The same thing every day;<br/>No variation from Monday to Sunday</p>
       </div>
-      <div class="w3-col l4 m12 w3-button w3-grey disabled jar" id="oddEven">
+      <div class="w3-col l4 m12 w3-button w3-green option jar" id="oddEven">
         <p class="w3-large">Every Other Day Schedule (coming soon)</p>
         <p>Odd days are different than even days</p>
       </div>
@@ -38,7 +38,7 @@
     <button class="w3-green w3-button create">Create Schedule</button>
     <br/><br/>
   </div>
-  <div class="w3-container scheduleBuilder w3-center" id="oddEvenBuilder">
+  <div class="w3-container scheduleBuilder w3-center" id="oddEvenBuilder" hidden>
     <p class="w3-large">You have selected an odd even schedule that is different depending on the calendar day.</p>
     <button class="backToPre w3-button w3-red">Back to Schedule Selection</button>
     <br/><br/>
