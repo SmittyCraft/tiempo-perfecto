@@ -1,11 +1,15 @@
+var events = [];
+
 $('#load').click(function () {
   var input = $('#data').val();
   var schedule = JSON.parse(input);
   if (schedule.type === 'static') {
-    loadTable(schedule.times);
+    events = schedule.times;
+    loadTable(events);
   } else if (schedule.type === 'oddEven') {
     var day = new Date().getDay() % 2;
-    loadTable(schedule.times[day]);
+    events = schedule.times[day];
+    loadTable(events);
   }
 });
 
